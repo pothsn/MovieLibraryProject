@@ -43,6 +43,7 @@ namespace MovieLibrary.Controllers
             {
                 return BadRequest("Invalid data.");
             }
+
             db.Movies.Add(new Movie()
             {
                 Id = movie.Id,
