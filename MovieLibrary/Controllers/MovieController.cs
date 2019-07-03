@@ -12,19 +12,10 @@ namespace MovieLibrary.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        //// GET api/values
-        //public List<Movie> GetAllMovies()
-        //{
-        //    // Retrieve all movies from db logic
-        //    List<Movie> movies = db.Movies.ToList();
-        //    return movies;
-        //}
-
-        public IHttpActionResult GetAllMovies()
+        public IHttpActionResult Get()
         {
             // Retrieve all movies from db logic
-            IList<Movie> movies = null;
-            movies = db.Movies.ToList();
+            IList<Movie> movies = db.Movies.ToList();
             if (movies.Count == 0)
             {
                 return NotFound();
@@ -33,20 +24,10 @@ namespace MovieLibrary.Controllers
         }
 
         // GET api/values/5
-        //public Movie GetMovieById(int id)
-        //{
-        //    // Retrieve movie by id from db logic
-        //    Movie movie = new Movie();
-        //    movie = db.Movies.Where(m => m.Id == id).FirstOrDefault();
-        //    return movie;
-        //}
-
-        // GET api/values/5
-        public IHttpActionResult GetMovieById(int id)
+        public IHttpActionResult Get(int id)
         {
             //retrieve movie by id from db logic
-            Movie movie = null;
-            movie = db.Movies.Where(m => m.Id == id).Select(m => new Movie()
+            Movie movie = db.Movies.Where(m => m.Id == id).Select(m => new Movie()
             {
                 Id = m.Id,
                 Title = m.Title,
@@ -59,15 +40,9 @@ namespace MovieLibrary.Controllers
             }
             return Ok(movie);
         }  
-        
-        // POST api/values
-        //public void Post([FromBody]Movie value)
-        //{
-        //    // Create movie in db logic
-        //}
 
         // POST api/values
-        public IHttpActionResult PostMovie(Movie movie)
+        public IHttpActionResult Post(Movie movie)
         {
             // Create movie in db logic
             if(!ModelState.IsValid)
@@ -84,12 +59,6 @@ namespace MovieLibrary.Controllers
             db.SaveChanges();
             return Ok();
         }
-
-        // PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //    // Update movie in db logic
-        //}
 
         // PUT api/values/5
         public IHttpActionResult Put(Movie movie)
@@ -114,13 +83,6 @@ namespace MovieLibrary.Controllers
             return Ok();
         }
 
-
-        // DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //    // Delete movie from db logic
-        //}
-
         // DELETE api/values/5
         public IHttpActionResult Delete(int id)
         {
@@ -135,5 +97,4 @@ namespace MovieLibrary.Controllers
             return Ok();
         }
     }
-
 }
