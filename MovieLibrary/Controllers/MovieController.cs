@@ -27,13 +27,7 @@ namespace MovieLibrary.Controllers
         public IHttpActionResult Get(int id)
         {
             //retrieve movie by id from db logic
-            Movie movie = db.Movies.Where(m => m.Id == id).Select(m => new Movie()
-            {
-                Id = m.Id,
-                Title = m.Title,
-                Genre = m.Genre,
-                DirectorName = m.DirectorName
-            }).FirstOrDefault<Movie>();
+            Movie movie = db.Movies.Where(m => m.Id == id).FirstOrDefault();
             if (movie == null)
             {
                 return NotFound();
