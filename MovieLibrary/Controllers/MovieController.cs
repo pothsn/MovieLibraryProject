@@ -55,14 +55,14 @@ namespace MovieLibrary.Controllers
         }
 
         // PUT api/values/5
-        public IHttpActionResult Put(Movie movie)
+        public IHttpActionResult Put(int id, Movie movie)
         {
             // Update movie in db logic
             if (!ModelState.IsValid)
             {
                 return BadRequest("Not a vlid model");
             }
-            var existingMovie = db.Movies.Where(m => m.Id == movie.Id).FirstOrDefault<Movie>();
+            var existingMovie = db.Movies.Find(id);
             if (existingMovie != null)
             {
                 existingMovie.Title = movie.Title;
