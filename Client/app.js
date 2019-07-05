@@ -5,7 +5,7 @@
 	        	type: 'get',
 	        	success: function(movies) {
 	        		$.each(movies, function(i, movie) {
-	        			j.append('<li>title: ' + movie.Title + ', genre: ' + movie.Genre + ', director: '  + movie.Director + '</li>');      		
+	        			j.append('<li>Title: ' + movie.Title + ', Genre: ' + movie.Genre + ', Director: '  + movie.DirectorName + '</li>');      		
 	        		});
 	        	},
 	        });
@@ -14,7 +14,7 @@
         var movie = {
         	Title : this["title"].value,
         	Genre : this["genre"].value,
-        	Director: this["director"].value
+        	DirectorName: this["director"].value
         };
 
         $.ajax({
