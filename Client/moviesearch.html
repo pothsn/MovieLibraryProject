@@ -7,15 +7,28 @@
 
 <div class="topnav" id="myTopNav">
 	<a class="nav-link navport" href="index.html">Home</a>
- 	<a class="nav-link navport" href="moviesearch.html">Movie Search</a>
+ 	<a class="nav-link navport" href="moviesearch.html">Edit Movie Info</a>
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
-<h2>Search for a movie</h2>
+<h2> Select movie </h2>
 
-<form class="inputForm" id="myForm">
+<p>
+    <input type="button" value="Populate movie list" id="bt" />
+</p>
+
+<select id="sel">
+    <option value="">-- Select --</option>
+</select>
+
+<p id="msg"></p>
+
+
+<h2>Enter new movie information</h2>
+
+<form class="inputForm" id="updateMovieForm">
     <input type="text" name="title" placeholder="Title" />
     <input type="text" name="genre" placeholder="Genre" />
     <input type="text" name="director" placeholder="Director Name" />
