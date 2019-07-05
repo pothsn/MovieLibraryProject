@@ -25,9 +25,9 @@
             data: JSON.stringify(movie),
             success: function( data, textStatus, jQxhr ){
                 $('#response pre').html( data );
+                j.append('<li>Title: ' + movie.Title + ', Genre: ' + movie.Genre + ', Director: '  + movie.DirectorName + '</li>');
             },
             error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
             }
         });
 
