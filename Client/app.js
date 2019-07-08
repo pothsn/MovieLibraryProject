@@ -57,42 +57,66 @@ let currentSelectedMovie;
                 $.each(movies, function (index, movie) {
                     // APPEND OR INSERT DATA TO SELECT ELEMENT.
                     $('#sel').append('<option value="' + movie.Id + '">' + movie.Title + '</option>');
-                    // Need to send movie id on somehow
                 });
             });
         });
 
         // SHOW SELECTED VALUE.
         $('#sel').change(function () {
-            $('#msg').text('Selected Item: ' + this.options[this.selectedIndex].text);
+            var a = this.options[this.selectedIndex];
+            $('#msg').text('Selected Item: ' + a.text);
+            $("#movieId").val(a.value);
         });
 
         $('#updateMovieForm').submit( processUpdateMovieForm );
         function processUpdateMovieForm( e ){
             alert("test");
-            let movieId = movie.Id;
+            var movieId = $("#movieId").val();
             let newTitleInput = $("#newTitleInput").val();
             let newGenreInput = $("#newGenreInput").val();
             let newDirectorInput = $("#newDirectorInput").val();
+            var movie = {
+            Title : this["newTitleInput"].value,
+            Genre : this["newGenreInput"].value,
+            DirectorName: this["newDirectorInput"].value
+            };
             $.ajax({
-            type: 'put',
-            // need to append actual movie id at end instead of 1
-            url: 'https://localhost:44352/api/movie/' + movieId,
-            dataType: 'application/json',
-            data:{
-               "Title": newTitleInput,
-               "Genre": newGenreInput,
-               "DirectorName": newDirectorInput,
-            },
-            success: function (data){
-                alert("YAY!");
-                console.log(data);
-            }
+                url: 'https://localhost:44352/api/movie/' + movieId,
+                dataType: 'json',
+                type: 'put',
+                contentType: 'application/json',
+                data: JSON.stringify(movie),             
+                success: function ( data ){
+                    alert("YAY!");
+                    console.log(data);
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                }
         });
+        e.preventDefault();
         }
+        // $.ajax({
+        //     url: 'https://localhost:44352/api/movie',
+        //     dataType: 'html',
+        //     type: 'post',
+        //     contentType: 'application/json',
+        //     data: JSON.stringify(movie),
+        //     success: function( data, textStatus, jQxhr ){
+        //         $('#response pre').html( data );
+        //         addMovie(movie);
+        //     },
+        //     error: function( jqXhr, textStatus, errorThrown ){
+        //     }
+        // });
+        // e.preventDefault();
+
+
+
+
+
+
+
+
     });
-
     $('#addMovieForm').submit( processAddMovieForm );
-     
-
 })(jQuery);

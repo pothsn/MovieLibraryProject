@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE+edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
 
-<div class="topnav" id="myTopNav">
-	<a class="nav-link navport" href="index.html">Home</a>
- 	<a class="nav-link navport" href="moviesearch.html">Edit Movie Info</a>
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+    <div class="topnav" id="myTopNav">
+        <a class="nav-link navport" href="index.html">Home</a>
+        <a class="nav-link navport" href="moviesearch.html">Edit Movie Info</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
 
-<h2> Select movie </h2>
+    <h2> Select movie </h2>
 
-<p>
-    <input type="button" value="Populate movie list" id="bt" />
-</p>
+    <p>
+        <input type="button" value="Populate movie list" id="bt" />
+    </p>
 
-<select id="sel">
-    <option value="">-- Select --</option>
-</select>
+    <select id="sel">
+        <option value="">-- Select --</option>
+    </select>
 
-<p id="msg"></p>
-
-
-<h2>Enter new movie information</h2>
-
-<form class="inputForm" id="updateMovieForm">
-    <input type="text" id="newTitleInput" name="newTitleInput" placeholder="Title" />
-    <input type="text" id="newGenreInput" name="newGenreInput" placeholder="Genre" />
-    <input type="text" id="newDirectorInput" name="newDirectorInput" placeholder="Director Name" />
-
-    <button type="submit">Submit</button>
-</form>
+    <p id="msg"></p>
 
 
+    <h2>Enter new movie information</h2>
 
+    <form class="inputForm" id="updateMovieForm">
+        <input type="hidden" id="movieId" name="movieId" />
+        <input type="text" id="newTitleInput" name="newTitleInput" placeholder="Title" />
+        <input type="text" id="newGenreInput" name="newGenreInput" placeholder="Genre" />
+        <input type="text" id="newDirectorInput" name="newDirectorInput" placeholder="Director Name" />
 
+        <button type="submit">Submit</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Bootstrap stuff -->
-<meta http-equiv="X-UA-Compatible" content="IE+edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- My stylesheet -->
-<link rel="stylesheet" type="text/css" href="styles.css">
-<!-- Google Fonts Stylesheet -->
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-<!-- Included scripts 1. Jquery 2. app.js file -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

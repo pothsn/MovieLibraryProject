@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Movie Library</title>
-    <meta charset="utf-8">
+	<title>Movie Library</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE+edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
 
-<div class="topnav" id="myTopNav">
-	<a class="nav-link navport" href="index.html">Home</a>
- 	<a class="nav-link navport" href="moviesearch.html">Edit Movie Info</a>
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+	<div class="topnav" id="myTopNav">
+		<a class="nav-link navport" href="index.html">Home</a>
+		<a class="nav-link navport" href="moviesearch.html">Edit Movie Info</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<div id="response">
+		<pre></pre>
+	</div>
+
+	<h2> Add new movie</h2>
+
+	<form class="inputForm" id="addMovieForm">
+		<input type="text" name="title" placeholder="Title" />
+		<input type="text" name="genre" placeholder="Genre" />
+		<input type="text" name="director" placeholder="Director Name" />
+
+		<button type="submit">Submit</button>
+	</form>
+
+	<h2> Movie List</h2>
+	<ul id="movies"></ul>
 
 
 
 
 
-<div id="response">
-    <pre></pre>
-</div>
-
-<h2> Add new movie</h2>
-
-<form class="inputForm" id="addMovieForm">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="genre" placeholder="Genre" />
-    <input type="text" name="director" placeholder="Director Name" />
-
-    <button type="submit">Submit</button>
-</form>
-
-<h2> Movie List</h2>
-<ul id="movies"></ul>
+	<!-- Bootstrap stuff -->
 
 
-
-
-
-<!-- Bootstrap stuff -->
-<meta http-equiv="X-UA-Compatible" content="IE+edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- My stylesheet -->
-<link rel="stylesheet" type="text/css" href="styles.css">
-<!-- Google Fonts Stylesheet -->
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-<!-- Included scripts 1. Jquery 2. app.js file -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
