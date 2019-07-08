@@ -19,30 +19,34 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
+        <div class="content">
+        <h2> Select movie </h2>
 
-    <h2> Select movie </h2>
+        <p>
+            <input type="button" value="Populate movie list" id="bt" />
+        </p>
 
-    <p>
-        <input type="button" value="Populate movie list" id="bt" />
-    </p>
+        <select id="sel">
+            <option value="">-- Select --</option>
+        </select>
 
-    <select id="sel">
-        <option value="">-- Select --</option>
-    </select>
+        <p id="msg"></p>
+    </div>
 
-    <p id="msg"></p>
+    <div class="content">
+        <h2>Enter new movie information</h2>
+        <form class="inputForm" id="updateMovieForm">
+            <input type="hidden" id="movieId" name="movieId" />
+            <input type="text" id="newTitleInput" name="newTitleInput" placeholder="Title" />
+            <input type="text" id="newGenreInput" name="newGenreInput" placeholder="Genre" />
+            <input type="text" id="newDirectorInput" name="newDirectorInput" placeholder="Director Name" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 
-    <h2>Enter new movie information</h2>
 
-    <form class="inputForm" id="updateMovieForm">
-        <input type="hidden" id="movieId" name="movieId" />
-        <input type="text" id="newTitleInput" name="newTitleInput" placeholder="Title" />
-        <input type="text" id="newGenreInput" name="newGenreInput" placeholder="Genre" />
-        <input type="text" id="newDirectorInput" name="newDirectorInput" placeholder="Director Name" />
 
-        <button type="submit">Submit</button>
-    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

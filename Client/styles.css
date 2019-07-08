@@ -24,4 +24,13 @@ body {background-color: #e0e2e4;}
   display: none;
 }
 
+.content {
+  text-align: left;
+  margin-left: 600px;
+  margin-right: 600px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
 
